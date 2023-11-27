@@ -1,0 +1,32 @@
+server:
+  port: 3634
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: root
+    password: password
+  jpa:
+    hibernate:
+      #      ddl-auto: create-drop
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+
+  ## Configuration Gateway
+  cloud:
+    gateway:
+      routes:
+        - id: elastic_search
+          uri: http://35.187.252.114:2160
+          predicates:
+            - Path=/api/search/{name}
+            - Method=GET
+          filters:
+            - AddRequestParameter=name, {name}
+
+  main:
+    web-application-type: reactive
