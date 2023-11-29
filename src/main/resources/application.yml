@@ -2,19 +2,6 @@ server:
   port: 3634
 
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: root
-    password: password
-  jpa:
-    hibernate:
-      #      ddl-auto: create-drop
-      ddl-auto: none
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: true
-    show-sql: true
 
   ## Configuration Gateway
   cloud:
@@ -27,6 +14,18 @@ spring:
             - Method=GET
           filters:
             - AddRequestParameter=name, {name}
+
+        - id: spring_register
+          uri: http://35.187.252.114:1234
+          predicates:
+            - Path=/user/signup
+            - Method=POST
+
+        - id: spring_login
+          uri: http://35.187.252.114:1234
+          predicates:
+            - Path=/user/login
+            - Method=POST
 
   main:
     web-application-type: reactive
