@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  gateway:
+    container_name: spring-gateway
+    image: coderbillzay/spring-gateway
+    ports:
+      - '3634:3634'
+    volumes:
+      - ./:/server
+    restart: always
