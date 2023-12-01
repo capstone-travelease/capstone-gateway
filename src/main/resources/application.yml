@@ -2,13 +2,12 @@ server:
   port: 3634
 
 spring:
-
   ## Configuration Gateway
   cloud:
     gateway:
       routes:
         - id: elastic_search
-          uri: http://35.187.252.114:2160
+          uri: http://34.142.198.2:2160
           predicates:
             - Path=/api/search/{name}
             - Method=GET
@@ -16,13 +15,13 @@ spring:
             - AddRequestParameter=name, {name}
 
         - id: spring_register
-          uri: http://35.187.252.114:1234
+          uri: http://34.142.198.2:1234
           predicates:
             - Path=/user/signup
             - Method=POST
 
         - id: spring_login
-          uri: http://35.187.252.114:1234
+          uri: http://34.142.198.2:1234
           predicates:
             - Path=/user/login
             - Method=POST
