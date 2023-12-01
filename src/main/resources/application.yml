@@ -15,13 +15,13 @@ spring:
             - AddRequestParameter=name, {name}
 
         - id: spring_register
-          uri: http://10.148.0.2:1234
+          uri: http://34.142.198.2:1234
           predicates:
             - Path=/user/signup
             - Method=POST
 
         - id: spring_login
-          uri: http://10.148.0.2:1234
+          uri: http://34.142.198.2:1234
           predicates:
             - Path=/user/login
             - Method=POST
