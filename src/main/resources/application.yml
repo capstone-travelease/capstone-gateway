@@ -7,7 +7,7 @@ spring:
     gateway:
       routes:
         - id: elastic_search
-          uri: http://34.142.198.2:2160
+          uri: http://10.148.0.2:2160
           predicates:
             - Path=/api/search/{name}
             - Method=GET
