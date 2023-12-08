@@ -26,5 +26,12 @@ spring:
             - Path=/user/login
             - Method=POST
 
+        - id: search_hotels
+          uri: http://10.148.0.2:9089
+          predicates:
+            - Path=/api/hotel/search/{hotelName}
+            - Method=GET
+          filters:
+            - AddRequestParameter=hotelName, {hotelName}
   main:
     web-application-type: reactive
