@@ -29,7 +29,7 @@ spring:
         - id: change_password
           uri: http://10.148.0.2:1234
           predicates:
-            - Path=/changepassword/{id}
+            - Path=/auth/changepassword/{id}
             - Method=PATCH
           filters:
             - AddRequestParameter=id, {id}
