@@ -37,6 +37,7 @@ spring:
           predicates:
             - Path=/user/getuser
             - Method=GET
+            - Query=userid
 
         - id: update_user
           uri: http://10.148.0.2:2010
