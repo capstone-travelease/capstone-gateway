@@ -35,7 +35,14 @@ spring:
         - id: user_services
           uri: http://10.148.0.2:2010
           predicates:
-            - Path=/user
+            - Path=/user/getuser
+            - Method = GET
+
+        - id: update_user
+          uri: http://10.148.0.2:2010
+          predicates:
+            - Path=/user/updateuser
+            - Method = POST
 
   main:
     web-application-type: reactive
