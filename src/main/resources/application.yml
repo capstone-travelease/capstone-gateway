@@ -17,14 +17,22 @@ spring:
         - id: spring_register
           uri: http://10.148.0.2:1234
           predicates:
-            - Path=/user/signup
+            - Path=/auth/signup
             - Method=POST
 
         - id: spring_login
           uri: http://10.148.0.2:1234
           predicates:
-            - Path=/user/login
+            - Path=/auth/login
             - Method=POST
+
+        - id: change_password
+          uri: http://10.148.0.2:1234
+          predicates:
+            - Path=/changepassword/{id}
+            - Method=PATCH
+          filters:
+            - AddRequestParameter=id, {id}
 
         - id: search_hotels
           uri: http://10.148.0.2:9089
