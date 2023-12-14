@@ -9,10 +9,9 @@ spring:
         - id: elastic_search
           uri: http://10.148.0.2:2160
           predicates:
-            - Path=/api/search/{name}
+            - Path=/api/location/search
             - Method=GET
-          filters:
-            - AddRequestParameter=name, {name}
+            - Query=name
 
         - id: spring_register
           uri: http://10.148.0.2:1234
