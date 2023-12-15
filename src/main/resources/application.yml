@@ -55,8 +55,10 @@ spring:
         - id: update_user
           uri: http://10.148.0.2:2010
           predicates:
-            - Path=/user/updateuser
+            - Path=/user/updateuser/{userid}
             - Method=PUT
+          filters:
+            - AddRequestParameter=userid, {userid}
 
   main:
     web-application-type: reactive
