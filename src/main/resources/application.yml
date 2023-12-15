@@ -56,7 +56,7 @@ spring:
           uri: http://10.148.0.2:2010
           predicates:
             - Path=/user/updateuser
-            - Method=POST
+            - Method=PUT
 
   main:
     web-application-type: reactive
