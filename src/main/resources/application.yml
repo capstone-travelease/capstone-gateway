@@ -13,6 +13,12 @@ spring:
             - Method=GET
             - Query=name
 
+        - id: elastic_search_all
+          uri: http://10.148.0.2:2160
+          predicates:
+            - Path=/api/location/
+            - Method=GET
+
         - id: spring_register
           uri: http://10.148.0.2:1234
           predicates:
