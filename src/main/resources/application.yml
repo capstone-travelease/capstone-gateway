@@ -60,12 +60,20 @@ spring:
           filters:
             - AddRequestParameter=userid, {userid}
 
-        - id: room_detail_list
+        - id: room_detail_get
           uri: http://10.148.0.2:49912
           predicates:
-            - Path=/api/room/detail/list
+            - Path=/api/room/detail/get-room
             - Method=GET
-            - Query=hotelId
+            - Query=roomId
+
+        - id: rooms_list
+          uri: http://10.148.0.2:49912
+          predicates:
+            - Path=/api/room/list/{hotelId}
+            - Method=GET
+          filters:
+            - AddRequestParameter=id, {hotelId}
 
   main:
     web-application-type: reactive
