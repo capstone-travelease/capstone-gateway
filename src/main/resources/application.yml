@@ -64,7 +64,7 @@ spring:
           uri: http://10.148.0.2:49912
           predicates:
             - Path=/api/room/detail/list
-            - Method=Get
+            - Method=GET
             - Query=hotelId
 
   main:
