@@ -55,10 +55,17 @@ spring:
         - id: update_user
           uri: http://10.148.0.2:2010
           predicates:
-            - Path=/user/updateuser/{userid}
+            - Path=/user/updateuser
             - Method=PUT
-          filters:
-            - AddRequestParameter=userid, {userid}
+            - Query=userid
+
+        - id: update_image
+          uri: http://10.148.0.2:2010
+          predicates:
+            - Path=/user/updateimage
+            - Method=PATCH
+            - Query=userid
+
 
         - id: room_detail_get
           uri: http://10.148.0.2:49912
