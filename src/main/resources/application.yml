@@ -70,10 +70,9 @@ spring:
         - id: rooms_list
           uri: http://10.148.0.2:49912
           predicates:
-            - Path=/api/room/list/{hotelId}
+            - Path=/api/room/list
             - Method=GET
-          filters:
-            - AddRequestParameter=id, {hotelId}
+            - Query=hotelId
 
   main:
     web-application-type: reactive
