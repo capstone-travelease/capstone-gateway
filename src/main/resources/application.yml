@@ -63,7 +63,7 @@ spring:
           uri: http://10.148.0.2:2010
           predicates:
             - Path=/user/updateimage
-            - Method=PATCH
+            - Method=POST
             - Query=userid
 
 
