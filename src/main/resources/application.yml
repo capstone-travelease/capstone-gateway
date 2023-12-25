@@ -81,5 +81,25 @@ spring:
             - Method=GET
             - Query=hotelId
 
+        - id: hotel_detail
+          uri: http://10.148.0.2:45397
+          predicates:
+            - Path=/api/hotel/detail
+            - Method=GET
+            - Query=hotelId
+
+        - id: add_hotel
+          uri: http://10.148.0.2:45397
+          predicates:
+            - Path=/api/hotel/add
+            - Method=POST
+
+        - id: delete_hotel
+          uri: http://10.148.0.2:45397
+          predicates:
+            - Path=/api/hotel/delete
+            - Method=DELETE
+            - Query=hotelId
+
   main:
     web-application-type: reactive
