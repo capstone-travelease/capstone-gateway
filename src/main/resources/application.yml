@@ -101,5 +101,11 @@ spring:
             - Method=DELETE
             - Query=hotelId
 
+        - id: facility_list
+          uri: http://10.148.0.2:7128
+          predicates:
+            - Path=/api/facility/list-all
+            - Method=GET
+
   main:
     web-application-type: reactive
