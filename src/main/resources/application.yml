@@ -39,6 +39,13 @@ spring:
           filters:
             - AddRequestParameter=id, {id}
 
+        - id: forgot_password
+          uri: http://10.148.0.2:1234
+          predicates:
+            - Path=/auth/forgetpassword
+            - Method=POST
+
+
         - id: search_hotels
           uri: http://10.148.0.2:9089
           predicates:
