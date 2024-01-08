@@ -6,6 +6,7 @@ spring:
   cloud:
     gateway:
       routes:
+          # Search API
         - id: elastic_search
           uri: http://10.148.0.2:2160
           predicates:
@@ -13,12 +14,13 @@ spring:
             - Method=GET
             - Query=name
 
-        - id: elastic_search_all
-          uri: http://10.148.0.2:2160
+        - id: search_hotels
+          uri: http://10.148.0.2:9089
           predicates:
-            - Path=/api/location/
-            - Method=GET
+            - Path=/api/hotel/search
+            - Method=POST
 
+        # Login API
         - id: spring_register
           uri: http://10.148.0.2:1234
           predicates:
@@ -45,13 +47,7 @@ spring:
             - Path=/auth/forgetpassword
             - Method=POST
 
-
-        - id: search_hotels
-          uri: http://10.148.0.2:9089
-          predicates:
-            - Path=/api/hotel/search
-            - Method=POST
-
+          # Users API
         - id: user_services
           uri: http://10.148.0.2:2010
           predicates:
@@ -73,7 +69,7 @@ spring:
             - Method=POST
             - Query=userid
 
-
+          # Rooms API
         - id: room_detail_get
           uri: http://10.148.0.2:49912
           predicates:
@@ -88,6 +84,7 @@ spring:
             - Method=GET
             - Query=hotelId
 
+          # Hotels API
         - id: hotel_detail
           uri: http://10.148.0.2:45397
           predicates:
@@ -108,11 +105,39 @@ spring:
             - Method=DELETE
             - Query=hotelId
 
+        # Facilities API
         - id: facility_list
           uri: http://10.148.0.2:7128
           predicates:
             - Path=/api/facility/list-all
             - Method=GET
+
+        # Booking & Bank API
+        - id: booking
+          uri: http://10.148.0.2:1947
+          predicates:
+            - Path=/booking/order
+            - Method=POST
+
+        - id: list_bank_userId
+          uri: http://10.148.0.2:1947
+          predicates:
+            - Path=/booking/getlistaccount
+            - Query=userid
+
+        - id: get_banking
+          uri: http://10.148.0.2:1947
+          predicates:
+            - Path=/booking/getallbank
+            - Method=GET
+            - Query=banktype
+
+        - id: add_bank_card
+          uri: http://10.148.0.2:1947
+          predicates:
+            - Path=/booking/addnewbank
+            - Method=POST
+            - Query=userid
 
   main:
     web-application-type: reactive
