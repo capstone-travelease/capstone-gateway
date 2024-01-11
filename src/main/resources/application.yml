@@ -144,7 +144,6 @@ spring:
           predicates:
             - Path=/booking/get-orders
             - Method=GET
-            - Query=statusName
 
         - id: get_ticket
           uri: http://10.148.0.2:1947
