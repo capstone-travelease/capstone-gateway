@@ -139,5 +139,18 @@ spring:
             - Method=POST
             - Query=userid
 
+        - id: get_after_booking
+          uri: http://10.148.0.2:1947
+          predicates:
+            - Path=/booking/get-orders
+            - Method=GET
+            - Query=statusName
+
+        - id: get_ticket
+          uri: http://10.148.0.2:1947
+          predicates:
+            - Path=/booking/get-orders
+            - Method=GET
+
   main:
     web-application-type: reactive
