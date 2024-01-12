@@ -151,5 +151,12 @@ spring:
             - Path=/booking/getTicket
             - Method=GET
 
+        - id: cancel_booking
+          uri: http://10.148.0.2:1947
+          predicates:
+            - Path=/booking/cancelBooking
+            - Method=PUT
+            - Query=userid
+
   main:
     web-application-type: reactive
