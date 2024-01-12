@@ -156,7 +156,7 @@ spring:
           predicates:
             - Path=/booking/cancelBooking
             - Method=PUT
-            - Query=userid
+            - Query=bookingId
 
   main:
     web-application-type: reactive
