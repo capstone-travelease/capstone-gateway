@@ -5,6 +5,12 @@ spring:
   ## Configuration Gateway
   cloud:
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://127.0.0.1:3000"
+            allowedMethods:
+              - POST
       routes:
           # Search API
         - id: elastic_search
