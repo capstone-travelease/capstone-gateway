@@ -158,5 +158,12 @@ spring:
             - Method=PUT
             - Query=bookingId
 
+        # Help Service
+        - id: help_service
+          uri: http://10.148.0.2:1947
+          predicates:
+            - Path=/api/sendHelp
+            - Method=POST
+
   main:
     web-application-type: reactive
