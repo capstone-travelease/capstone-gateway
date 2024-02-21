@@ -162,7 +162,7 @@ spring:
         - id: help_service
           uri: http://10.148.0.2:56273
           predicates:
-            - Path=/api/sendHelp
+            - Path=/api/help/sendHelp
             - Method=POST
 
   main:
