@@ -160,7 +160,7 @@ spring:
 
         # Help Service
         - id: help_service
-          uri: http://10.148.0.2:1947
+          uri: http://10.148.0.2:56273
           predicates:
             - Path=/api/sendHelp
             - Method=POST
