@@ -169,13 +169,13 @@ spring:
         - id: chat_service
           uri: http://10.148.0.2:8877
           predicates:
-            - Path=/api/sendChat
+            - Path=/sendChat
             - Method=POST
 
         - id: get_chat
           uri: http://10.148.0.2:8877
           predicates:
-            - Path=/api/getChat
+            - Path=/getChat
             - Method=GET
             - Query=senderName, targetName
 
