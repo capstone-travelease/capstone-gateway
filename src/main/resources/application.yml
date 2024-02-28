@@ -177,7 +177,7 @@ spring:
           predicates:
             - Path=/getChat
             - Method=GET
-            - Query=senderName, targetName
+            - Query=senderName & Query=targetName
 
   main:
     web-application-type: reactive
