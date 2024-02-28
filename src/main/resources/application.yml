@@ -172,7 +172,7 @@ spring:
             - Path=/sendChat
             - Method=POST
 
-        - id: get_chat
+        - id: get_chatList
           uri: http://10.148.0.6:8877
           predicates:
             - Path=/getChat
