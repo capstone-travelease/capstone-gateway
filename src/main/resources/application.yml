@@ -165,5 +165,19 @@ spring:
             - Path=/api/help/sendHelp
             - Method=POST
 
+        # Chat Service
+        - id: chat_service
+          uri: http://10.148.0.2:8877
+          predicates:
+            - Path=/api/sendChat
+            - Method=POST
+
+        - id: get_chat
+          uri: http://10.148.0.2:8877
+          predicates:
+            - Path=/api/getChat
+            - Method=GET
+            - Query=senderName, targetName
+
   main:
     web-application-type: reactive
