@@ -178,5 +178,19 @@ spring:
             - Path=/getChat
             - Method=GET
 
+        # Rating Service
+        - id: post_rating
+          uri: http://10.148.0.6:57503
+          predicates:
+            - Path=/rating
+            - Method=POST
+
+        - id: list_rating
+          uri: http://10.148.0.6:57503
+          predicates:
+            - Path=/list-rating
+            - Method=GET
+            - Query=hotelId
+
   main:
     web-application-type: reactive
