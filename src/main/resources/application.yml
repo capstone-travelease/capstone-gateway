@@ -114,9 +114,9 @@ spring:
 
         # Booking & Bank API
         - id: booking
-          uri: http://10.148.0.2:1947
+          uri: http://10.148.0.2:8082
           predicates:
-            - Path=/booking/order
+            - Path=/booking/pushlish
             - Method=POST
 
         - id: list_bank_userId
