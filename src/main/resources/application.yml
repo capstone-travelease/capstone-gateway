@@ -105,6 +105,11 @@ spring:
             - Method=DELETE
             - Query=hotelId
 
+        - id: suggest_hotel
+          uri: http://10.148.0.2:45397
+          predicates:
+            - Path=/api/hotel/suggestHotel
+            - Method=GET
         # Facilities API
         - id: facility_list
           uri: http://10.148.0.2:7128
