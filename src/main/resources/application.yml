@@ -171,6 +171,14 @@ spring:
           filters:
             - AddRequestParameter=id, {id}
 
+        - id: post_otp
+          uri: http://10.148.0.2:1947
+          predicates:
+            - Path=/booking/otp/{id}
+            - Method=POST
+          filters:
+            - AddRequestParameter=id, {id}
+
         # Help Service
         - id: help_service
           uri: http://10.148.0.2:56273
